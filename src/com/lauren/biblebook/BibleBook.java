@@ -11,6 +11,13 @@ public class BibleBook {
         this.contentSum = contentSum;
     }
 
+    public BibleBook(String colonDelimited){
+        String[] bookParts = colonDelimited.split(":");
+        this.bookName = bookParts[0];
+        this.chapterNum = Integer.parseInt(bookParts[1]);
+        this.contentSum = bookParts[2];
+    }
+
     public void displayReasonably() {
         System.out.println("Book Name: " + this.bookName + " (" + this.chapterNum  + ") - " + this.contentSum);
     }
