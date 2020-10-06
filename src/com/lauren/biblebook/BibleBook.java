@@ -34,4 +34,12 @@ public class BibleBook {
         System.out.println();
     }
 
+    public String getContentSum() {
+        return contentSum;
+    }
+
+    public String getBookName(){
+        return  bookName;
+    }
+
 }
