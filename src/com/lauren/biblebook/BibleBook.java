@@ -34,6 +34,38 @@ public class BibleBook {
         System.out.println();
     }
 
+    public static void sortOnChapterCount(BibleBook[] bibleBookArray) {
+        int numSwaps;
+        BibleBook temp;
+        do {
+            numSwaps = 0;
+            for(int i = 0; i < bibleBookArray.length - 1; i++) {
+                if (bibleBookArray[i].chapterNum > bibleBookArray[i+1].chapterNum) {
+                    temp = bibleBookArray[i];
+                    bibleBookArray[i] = bibleBookArray[i+1];
+                    bibleBookArray[i+1] = temp;
+                    numSwaps++;
+                }
+            }
+        } while (numSwaps > 0);
+    }
+
+    public static void sortOnName(BibleBook[] bibleBookArray) {
+        int numSwaps;
+        BibleBook temp;
+        do {
+            numSwaps = 0;
+            for(int i = 0; i < bibleBookArray.length - 1; i++) {
+                if (bibleBookArray[i].bookName.compareTo(bibleBookArray[i+1].bookName) > 0) {
+                    temp = bibleBookArray[i];
+                    bibleBookArray[i] = bibleBookArray[i+1];
+                    bibleBookArray[i+1] = temp;
+                    numSwaps++;
+                }
+            }
+        } while (numSwaps > 0);
+    }
+
     public String getContentSum() {
         return contentSum;
     }
