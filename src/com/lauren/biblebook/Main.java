@@ -16,6 +16,8 @@ public class Main {
         }
         input.close();
 
+        display(bibleBooks.toArray(new BibleBook[]{}));
+
         Scanner userInput = new Scanner(System.in);
         System.out.println("Enter keyword: ");
         String keyWord = userInput.nextLine();
@@ -28,5 +30,16 @@ public class Main {
             }
         }
 
+    }
+
+    public static void display(BibleBook[] bibleBookArray) {
+        BibleBook.sortOnChapterCount(bibleBookArray);
+        for (int i = 0; i < bibleBookArray.length; i++) {
+            System.out.println(bibleBookArray[i].getBookName());
+        }
+        BibleBook.sortOnName(bibleBookArray);
+        for (int i = 0; i < bibleBookArray.length; i++) {
+            System.out.println(bibleBookArray[i].getBookName());
+        }
     }
 }
